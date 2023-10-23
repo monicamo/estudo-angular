@@ -1,0 +1,12 @@
+<div fxLayout="column" fxLayoutAlign="start center" >
+  <div fxLayout="column" fxLayoutAlign="start center" fxFlex="70" >
+    <app-person
+    [person]="p"
+    *ngFor="let p of people$ | async"
+    (delete)="delete($event)"
+    (update)="update($event)"
+    ></app-person>
+  </div>
+
+  <button class="button-add" mat-fab color="primary" (click)="addNew()">Click</button>
+</div>
